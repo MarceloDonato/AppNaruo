@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/shiringan"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MinatoActivity"></activity>
+        <activity android:name=".TobiramaActivity" />
+        <activity android:name=".HashiramaActivity" />
+        <activity android:name=".MadaraActivity" />
+        <activity android:name=".ObitoActivity" />
+        <activity android:name=".HinataActivity" />
+        <activity android:name=".SakuraActivity" />
+        <activity android:name=".DeidaraActivity" />
+        <activity android:name=".ItachiActivity" />
+        <activity android:name=".SasukeActivity" />
+        <activity android:name=".PainActivity" />
+        <activity android:name=".NarutoActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".HomeActivity" />
+    </application>
+
+</manifest>
