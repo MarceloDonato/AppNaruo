@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -14,7 +15,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        
+
+
+        button_logout.setOnClickListener {
+            logoutUser()
+        }
 
         pain_image_view.setOnClickListener {
             startActivity(PainActivity.getStartIntent(this))
@@ -77,6 +82,13 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
-
+    }
+    private fun logoutUser() {
+        Intent(applicationContext, LoginActivity::class.java).let {
+            FirebaseAuth.getInstance().signOut()
+            it.flags =
+                Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(it)
+        }
     }
 }
